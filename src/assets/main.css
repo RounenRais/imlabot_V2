@@ -42,7 +42,84 @@
     display: flex;
     gap: 0.5rem;
   }
+  .chat-container {
+    max-width: 600px;
+    margin: 40px auto;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .message {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    line-height: 1.4;
+    white-space: pre-line;
+  }
+  
+  .user {
+    align-self: flex-end;
+    background-color: #d1e7dd;
+  }
+  
+  .bot {
+    align-self: flex-start;
+    background-color: #8fc718;
+  }
+  
+  .input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  textarea {
+    flex: 1;
+    height: 60px;
+    resize: none;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #0a9b33;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .patch-notes{
+    /* text-align: center; */
+  }
+  .about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
   @media screen and (max-width: 768px) {
     .navbar {
       flex-direction: column;

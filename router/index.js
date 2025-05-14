@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // Sayfa bileşenlerini import edin
 import Home from '../src/views/home.vue';
 import About from '../src/views/about.vue';
+import PachNotes from '../src/views/pachnotes.vue';
 // import About from '../views/About.vue';
 // import NotFound from '../views/NotFound.vue';
 
@@ -17,7 +18,11 @@ const routes = [
      name: 'About',
      component: About,
    },
-
+   {
+    path: '/pachnotes',
+    name: 'PachNotes',
+    component: PachNotes,
+  },
 ];
 
 // Router'ı oluşturun

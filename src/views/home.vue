@@ -35,7 +35,21 @@
     // Kullanıcı mesajını ekle
     messages.value.push({ text: userInput.value, sender: "user" });
   
-    const prompt = `Aşağıdaki cümledeki yazım ve noktalama hatalarını düzelt:\n"${userInput.value}"`;
+    const prompt = `
+    Sen bir Türkçe dil editörüsün. TDK’nın noktalama kurallarına sıkı sıkıya uymalısın.
+Tüm yazım ve noktalama düzeltmelerini TDK’ya göre yap. Özellikle:
+- Virgül, nokta, iki nokta gibi işaretleri TDK'ya göre yerleştir.
+- "ki", "de", "mi" eklerini ayırmaya dikkat et.
+- Gereksiz ünlem veya noktalama kullanma.
+- Çift tırnakların doğru kullanımına dikkat et.
+- Bağlaçlardan(Ve,Ancak,Veya,Fakat,ama,yada) sonra yada önce noktalama işareti gelmez dikkat et
+örnek
+Yanlış: "Söz vermek kolaydır, ancak o sözü yerine getirmek zordur." 
+Doğru: "Söz vermek kolaydır ancak o sözü yerine getirmek zordur." 
+
+Yalnızca düzeltilmiş cümleyi ver. Açıklama yapma.
+    Aşağıdaki cümledeki yazım ve noktalama hatalarını düzelt:\n"${userInput.value}
+    "`;
   
     try {
       const res = await axios.post(
@@ -73,74 +87,6 @@
   </script>
   
   <style scoped>
-  .chat-container {
-    max-width: 600px;
-    margin: 40px auto;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 20px;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
   
-  h2 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .chat-box {
-    height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
-    background: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .message {
-    max-width: 75%;
-    padding: 10px 14px;
-    border-radius: 12px;
-    line-height: 1.4;
-    white-space: pre-line;
-  }
-  
-  .user {
-    align-self: flex-end;
-    background-color: #d1e7dd;
-  }
-  
-  .bot {
-    align-self: flex-start;
-    background-color: #8fc718;
-  }
-  
-  .input-area {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  textarea {
-    flex: 1;
-    height: 60px;
-    resize: none;
-    border-radius: 8px;
-    padding: 10px;
-  }
-  
-  button {
-    padding: 10px 16px;
-    border-radius: 8px;
-    background-color: #0a9b33;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
   </style>
   
